@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meters to Feet Converter</title>
+<style>
+  /* CSS styles for the page */
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .container {
+    margin-top: 50px;
+  }
+  a {
+    text-decoration: none;
+    color: #f0f0f0;
+  }
+  .container button,
+  .button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .container button:hover,
+  .button:hover {
+    background: #218838;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- Navigation button to Home page -->
+    <button><a href="index.html">Home</a></button>
+    <!-- Title of the page -->
+    <h2>Meters to Feet Converter</h2>
+    <!-- Form for input and conversion -->
+    <form id="meterToFeetForm">
+        <!-- Input field for meters -->
+        <label for="meters">Meters:</label>
+        <input type="number" id="meters" name="meters" step="any" required>
+        <!-- Submit button -->
+        <input class="button" type="submit" value="Convert">
+    </form>
+    <!-- Placeholder for result -->
+    <p id="result"></p>
+</div>
+
+<!-- JavaScript for conversion calculation -->
+<script>
+  document.getElementById('meterToFeetForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get value in meters from input
+    let meters = parseFloat(document.getElementById('meters').value);
+    
+    // Convert meters to feet (1 meter = 3.28084 feet)
+    let feet = meters * 3.28084;
+    
+    // Display the result
+    document.getElementById('result').innerText = `${meters} Meters = ${feet.toFixed(2)} Feet`;
+  });
+</script>
+
+</body>
+</html>
